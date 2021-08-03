@@ -1,42 +1,79 @@
-import React from 'react';
-import { Dropdown , Form, Button } from 'react-bootstrap'
+import React, {useState} from 'react';
+import { InputGroup , FormControl, Button, Modal, Form} from 'react-bootstrap'
 
 function AddMovie() {
-   return( 
-    <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-             Dropdown Button
-        </Dropdown.Toggle>
-  
-        <Dropdown.Menu>
-           <Dropdown.Item href="#/action-1">
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                          <Form.Control type="email" placeholder="Enter email" />
-                                     <Form.Text className="text-muted">
-                                        We'll never share your email with anyone else.
-                                     </Form.Text>
-                    </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                             <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow} style={{marginLeft:'200px'}}>
+        Add New Movie 
+      </Button>
 
-                             <Button variant="primary" type="submit">
-                                Submit
-                             </Button>
-                </Form>
-           </Dropdown.Item>    
-      
-       </Dropdown.Menu>
-  </Dropdown>
-   )
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Add Movie</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-default">Enter Movie title</InputGroup.Text>
+              <FormControl
+                 aria-label="Default"
+                 aria-describedby="inputGroup-sizing-default"
+              />
+            </InputGroup>
+             <br />
+
+             <InputGroup className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-default">Enter Movie Rating</InputGroup.Text>
+              <FormControl
+                 aria-label="Default"
+                 aria-describedby="inputGroup-sizing-default"
+                 
+              />
+            </InputGroup>
+             <br />
+
+             <InputGroup className="mb-3">
+             <InputGroup.Text id="inputGroup-sizing-default">Enter Movie PosterURL</InputGroup.Text>
+              <FormControl
+                 aria-label="Default"
+                 aria-describedby="inputGroup-sizing-default"
+              />
+            </InputGroup>
+             <br />
+
+
+             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+               <Form.Label>Enter Movie Description</Form.Label>
+               <Form.Control as="textarea" rows={3} />
+             </Form.Group>
+
+
+             
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Save</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 }
+
+//render(<AddMovie />);
+   
 
 export default AddMovie;
