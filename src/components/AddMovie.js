@@ -1,15 +1,35 @@
 import React, {useState} from 'react';
 import { InputGroup , FormControl, Button, Modal, Form} from 'react-bootstrap'
 
-function AddMovie() {
+
+function AddMovie({movieName, setMovieName}) {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [newTitle,setNewTitle] = React.useState('');
+  const [newRate,setNewRate]= React.useState('');
+  const [newPoster,setNewPoster] =React.useState('');
+  const [newDescription,setNewDescription]=React.useState('');
+
+  const NewMovie = () => {
+    let newMovie = {
+      id : Math.random(),
+      title : `${newTitle}`,
+      posterURL: `${newPoster}`,
+      rating: `${newRate}`,
+      description: `${newDescription}`
+    };
+
+    setMovieName([...movieName,newMovie])
+    handleClose()
+   
+
+  }
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} style={{marginLeft:'200px'}}>
+      <Button variant="outline-dark" onClick={handleShow} style={{marginLeft:'100px', width:'400px'}}>
         Add New Movie 
       </Button>
 
@@ -25,10 +45,15 @@ function AddMovie() {
 
         <Modal.Body>
           <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">Enter Movie title</InputGroup.Text>
+            <InputGroup.Text 
+            id="inputGroup-sizing-default"
+            
+            >Enter Movie title</InputGroup.Text>
               <FormControl
                  aria-label="Default"
                  aria-describedby="inputGroup-sizing-default"
+                 onChange ={(e) => setNewTitle(e.target.value)}
+                 
               />
             </InputGroup>
              <br />
@@ -38,6 +63,8 @@ function AddMovie() {
               <FormControl
                  aria-label="Default"
                  aria-describedby="inputGroup-sizing-default"
+                 onChange ={(e) => setNewRate(e.target.value)}
+
                  
               />
             </InputGroup>
@@ -48,14 +75,18 @@ function AddMovie() {
               <FormControl
                  aria-label="Default"
                  aria-describedby="inputGroup-sizing-default"
+                 onChange ={(e) => setNewPoster(e.target.value)}
+                 
               />
             </InputGroup>
              <br />
 
+             
+
 
              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                <Form.Label>Enter Movie Description</Form.Label>
-               <Form.Control as="textarea" rows={3} />
+               <Form.Control as="textarea" rows={3} onChange ={(e) => setNewDescription(e.target.value)} />
              </Form.Group>
 
 
@@ -66,14 +97,14 @@ function AddMovie() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Save</Button>
+          <Button variant="primary" onClick={NewMovie}>Save</Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-//render(<AddMovie />);
+
    
 
 export default AddMovie;

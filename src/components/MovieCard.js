@@ -3,37 +3,34 @@ import { Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactStars from "react-rating-stars-component";
 
-
-
-
-
 function MovieCard ({movie}) {
 
-    const ratingChanged = (newRating) => {
-        console.log(newRating)}
+    
     return (
     <div >
         {
 
-        <Card key={movie.id}  style={{ width: '18rem', margin :'30px' }} >
-           <Card.Img variant="top" src= {movie.posterURL} alt="blabla" style={{height : '30rem'}}/>
-             <Card.Body>
-                    <Card.Title>{movie.title}</Card.Title>
+        <Card style={{width: '18rem', margin :'30px' ,height:'45rem'}} >
+           <Card.Img variant="top" src= {movie.posterURL} alt="blabla" style={{minHeight : '30rem'}}/>
+             <Card.Body style ={{display :'flex', flexDirection:'column'}}>
+                    <Card.Title style ={{height : '25px', width:'auto', overflowY:'auto'}}>{movie.title}</Card.Title>
                     <ReactStars
-                        count={8}
-                        onChange={ratingChanged}
+                        count={5}
                         size={20}
-                        isHalf={true}
+                        isHalf={false}
                         emptyIcon={<i className="far fa-star"></i>}
                         halfIcon={<i className="fa fa-star-half-alt"></i>}
                         fullIcon={<i className="fa fa-star"></i>}
                         activeColor="#ffd700"
                         value={movie.rating}
+                        edit={false}
                     />
-                    <Card.Text>
+                    <Card.Text style ={{width:'255px', height:'100px', overflow :'auto'}}>
                      {movie.description}
-               </Card.Text>
-                     <Button variant="primary">See trailer</Button>
+                    </Card.Text>
+                    
+                     <Button variant="outline-secondary" style ={{alignSelf:'center'}}>See trailer</Button>
+                     
               </Card.Body>
               
         </Card>

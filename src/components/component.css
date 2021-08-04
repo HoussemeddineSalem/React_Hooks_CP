@@ -1,6 +1,10 @@
 /*Styling the Navbar*/
 .nav-bar-styl{
     font-family: 'Ubuntu', sans-serif;
+    width: 1300px;
+    margin:auto;
+    border-radius: 20px;
+    background-color: #b2bec3;
 }
 
 .nav-bar-brand-styl{
@@ -10,4 +14,9 @@
     font-weight: bold;
 }
 
-  
+/*Styling rating stars of the NavBar*/
+.react-stars-styl{
+    margin-right: 30px;
+    margin-left: 30px;
+    
+}  

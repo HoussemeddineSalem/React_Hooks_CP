@@ -7,11 +7,26 @@ import NavBar from "./components/NavBar";
 
 function App() {
   const [movieName, setMovieName] = React.useState(MovieData)
-  const [titleSearch, setTitleSearch] = React.useState('')
+  const [titleSearch, setTitleSearch] = React.useState('');
+  const [ratingSearch,setRatingSearch] = React.useState(0)
   return (
     <div className="App">
-      <NavBar setMovieName={setMovieName} setTitleSearch={setTitleSearch}/>
-      <MovieList movieName={movieName} titleSearch={titleSearch}  />
+      <NavBar 
+      
+      titleSearch={titleSearch}
+      ratingSearch ={ratingSearch} 
+      movieName={movieName} 
+      setMovieName={setMovieName} 
+      setTitleSearch={setTitleSearch} 
+      setRatingSearch={setRatingSearch}
+
+      />
+      <MovieList 
+      movieName={movieName} 
+      titleSearch={titleSearch} 
+      ratingSearch={ratingSearch}  
+
+      />
     </div>
   );
 }
