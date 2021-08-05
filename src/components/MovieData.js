@@ -72,6 +72,40 @@ const MovieData = [
         description:
           'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
       },
+      
+        {
+          id : 10,
+          posterURL:
+            'https://m.media-amazon.com/images/M/MV5BMTA3NDM5ODU3NzleQTJeQWpwZ15BbWU3MDgyMjgyNDE@._V1_.jpg',
+          title: 'Epic Movie',
+          rating: 1,
+          description:
+            'A spoof on previous years epic movies (The Da Vinci Code (2006), The Chronicles of Narnia: The Lion, the Witch and the Wardrobe (2005) + 20 more), TV series, music videos and celebs. 4 orphans are on an epic adventure.',
+        },
+        { id :11,
+          posterURL:
+            'https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_.jpg',
+          title: '1917',
+          rating: 4,
+          description:
+            'April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.',
+        },
+        { id:12,
+          posterURL:
+            'https://m.media-amazon.com/images/M/MV5BMjExNDkzNjAwOV5BMl5BanBnXkFtZTcwMDMzMzQwOQ@@._V1_.jpg',
+          title: 'The Call',
+          rating: 3,
+          description:
+            'When a veteran 911 operator takes a life-altering call from a teenage girl who has just been abducted, she realizes that she must confront a killer from her past in order to save the girls life.',
+        },
+        { id :13,
+          posterURL:
+            'https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
+          title: 'The Hangover',
+          rating: 4,
+          description:
+            'Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.',
+        },
     
     
     

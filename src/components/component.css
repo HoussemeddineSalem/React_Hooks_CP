@@ -1,9 +1,9 @@
 /*Styling the Navbar*/
 .nav-bar-styl{
     font-family: 'Ubuntu', sans-serif;
-    width: 1300px;
-    margin:auto;
-    border-radius: 20px;
+    
+    padding-left:100px;
+    border-radius: 5px;
     background-color: #b2bec3;
 }
 
