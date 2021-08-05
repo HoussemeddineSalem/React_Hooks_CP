@@ -31,8 +31,8 @@ export default function NavBar({movieName, titleSearch ,setMovieName, setTitleSe
                         style={{ maxHeight: '50px', fontSize:'20px', marginRight:'50px' }}
                         navbarScroll
                       >
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                         <Nav.Link href="#action2">Films</Nav.Link>
+                        {/* <Nav.Link href="#action1">Home</Nav.Link>
+                         <Nav.Link href="#action2">Films</Nav.Link> */}
                          
                           
                        </Nav>
